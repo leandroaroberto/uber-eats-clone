@@ -4,7 +4,7 @@ import HeaderTabs from '../components/HeaderTabs'
 import { SaferAreaView } from '../components/SaferAreaView'
 import SearchBar from '../components/SearchBar'
 import Categories from '../components/Categories'
-import RestaurantItem from '../components/RestaurantItem'
+import RestaurantItems from '../components/RestaurantItems'
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       </View>
       <ScrollView showVerticalScrowIndicator={false}>
         <Categories/>
-        <RestaurantItem/>
+        <RestaurantItems/>
       </ScrollView>
     </SaferAreaView>
   )
