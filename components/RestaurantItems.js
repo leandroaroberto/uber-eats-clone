@@ -50,7 +50,7 @@ export default function RestaurantItems(props) {
 const RestaurantImage = ({image}) => (
     <>
         <Image  
-            source={{uri: image}} 
+            source={{uri: image ? image : 'https://www.fugusau.edu.ng/wp-content/uploads/2021/01/Bubble-Preloader-1-1.gif'}} 
             style={{width: "100%", height: 180}}
         />
         <TouchableOpacity style={{ position: 'absolute', right:20, top: 20}}>

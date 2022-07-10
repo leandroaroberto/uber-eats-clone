@@ -11,9 +11,10 @@ import {YELP_API_KEY} from '../config';
 export default function Home() {
 
   const [restaurantData, setRestaurantData] = useState(localRestaurants)
+  const [city, setCity] = useState('Trondheim')
 
   const getRestaurantsFromYelp = () => {
-    const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=SanDiego`;
+    const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;    
 
     const apiOptions = {
       headers: {
@@ -30,7 +31,7 @@ export default function Home() {
 
   useEffect(() => {
     getRestaurantsFromYelp();
-  }, []);
+  }, [city]);
 
 
 
@@ -38,7 +39,7 @@ export default function Home() {
     <SaferAreaView>
       <View style={{backgroundColor: 'white', padding: 15}}>
         <HeaderTabs/>
-        <SearchBar/>
+        <SearchBar cityHandler={setCity}/>
       </View>
       <ScrollView showVerticalScrowIndicator={false}>
         <Categories/>
