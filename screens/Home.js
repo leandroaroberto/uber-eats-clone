@@ -6,6 +6,8 @@ import SearchBar from '../components/SearchBar'
 import Categories from '../components/Categories'
 import RestaurantItems, { localRestaurants } from '../components/RestaurantItems'
 import {YELP_API_KEY} from '../config';
+import { Divider } from '@rneui/themed';
+import BottomTabs from '../components/BottomTabs'
 
 
 export default function Home() {
@@ -26,13 +28,10 @@ export default function Home() {
     return fetch(yelpUrl, apiOptions)
       .then((res) => res.json())
       .then((json) => {
-        setRestaurantData(
-          //json.businesses
-          json.businesses.filter((business) => 
-            business.transactions.includes(activeTab.toLowerCase()) 
-          )
-        )
-        //console.log(json.businesses)
+        const businessResult = json.businesses.filter((business) => 
+            business.transactions.includes(activeTab.toLowerCase())
+            );
+        setRestaurantData(businessResult.length ? businessResult : json.businesses)
       }
       );
   };
@@ -51,6 +50,8 @@ export default function Home() {
         <Categories/>
         <RestaurantItems restaurantData={restaurantData}/>
       </ScrollView>
+      <Divider width={1} />
+      <BottomTabs/>
     </SaferAreaView>
   )
 }
