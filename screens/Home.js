@@ -1,13 +1,13 @@
 import { View, Text, SafeAreaView, Platform, StatusBar, ScrollView } from 'react-native'
 import React, {useEffect, useState} from 'react'
-import HeaderTabs from '../components/HeaderTabs'
-import { SaferAreaView } from '../components/SaferAreaView'
-import SearchBar from '../components/SearchBar'
-import Categories from '../components/Categories'
-import RestaurantItems, { localRestaurants } from '../components/RestaurantItems'
+import HeaderTabs from '../components/home/HeaderTabs'
+import { SaferAreaView } from '../components/home/SaferAreaView'
+import SearchBar from '../components/home/SearchBar'
+import Categories from '../components/home/Categories'
+import RestaurantItems, { localRestaurants } from '../components/home/RestaurantItems'
 import {YELP_API_KEY} from '../config';
 import { Divider } from '@rneui/themed';
-import BottomTabs from '../components/BottomTabs'
+import BottomTabs from '../components/home/BottomTabs'
 
 
 export default function Home() {
