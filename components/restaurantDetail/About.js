@@ -17,7 +17,7 @@ export default function About() {
 }
 
 const RestaurantImage = (props) => (
-    <Image source={{ uri: props.image}} style={{ width: "100%", height: 150 }} />
+    <Image source={{ uri: props.image}} style={{ width: "100%", height: 120 }} />
 )
 
 const RestaurantTitle = (props) => (
