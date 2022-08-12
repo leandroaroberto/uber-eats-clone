@@ -34,6 +34,6 @@ By Leandro Roberto based on material of the Clever programmer youtube channel (h
 
 ### Home Screen
 
-<img src="docs/HomeScreen1.png" alt="Home Screen 1" />
-<img src="docs/HomeScreen2.png" alt="Home Screen 2" />
-<img src="docs/HomeScreen3.png" alt="Home Screen 3" />
+<img src="docs/HomeScreen1.png" alt="Home Screen 1" width="300" height="500"/>
+<img src="docs/HomeScreen3.png" alt="Home Screen 3" width="300" height="500"/>
+<img src="docs/HomeScreen2.png" alt="Home Screen 2" width="300" height="500"/>
