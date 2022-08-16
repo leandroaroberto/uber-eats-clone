@@ -1,16 +1,27 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 
-const image = "https://www.traveldine.com/wp-content/uploads/2021/09/northern-Thai-food-hot-shutter-stock.jpg"
+const yelpRestaurantInfo = {
+    name: 'Farmhouse Kitchen Thain Cuisine',
+    image: 'https://www.simplyrecipes.com/thmb/o21f7yISawuyh4zKJ8IiErwue28=/2000x1333/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2012__11__Vegetarian-Lasagna-LEAD-1-6173a71bfd1347aa8d7659150e87b8f4.jpg',
+    price: '$$',
+    reviews: '1500',
+    rating: 4.5,
+    categories: [{title: "Thai"}, {title: "Comfort Food"}]
+}
 
-const title = "Farm House Kitchen Thai Cuisine"
-const description = "Thai . Comfort Food . $$ . 💳 . 4 ⭐ (2913+)"
+const {name, image, price, reviews, rating, categories} = yelpRestaurantInfo;
+
+const formattedCategories = categories.map((data) => data.title).join(" . ");
+
+const description = `${formattedCategories} ${price ? " . " + price : ""} .  💳 . ${rating} ⭐ (${reviews}+)`
+
 
 export default function About() {
   return (
     <View>
       <RestaurantImage image={image} />
-      <RestaurantTitle title={title}/>
+      <RestaurantName name={name}/>
       <RestaurantDescription description={description}/>
     </View>
   )
@@ -20,14 +31,14 @@ const RestaurantImage = (props) => (
     <Image source={{ uri: props.image}} style={{ width: "100%", height: 120 }} />
 )
 
-const RestaurantTitle = (props) => (
+const RestaurantName = (props) => (
     <Text style={{ 
         fontSize: 25,
         fontWeight: "600",
         marginTop: 10,
         marginHorizontal: 15,
     }}>
-        {props.title}
+        {props.name}
     </Text>
 )
 
