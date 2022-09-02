@@ -10,7 +10,7 @@ import { Divider } from '@rneui/themed';
 import BottomTabs from '../components/home/BottomTabs'
 
 
-export default function Home() {
+export default function Home({navigation}) {
 
   const [activeTab,setActiveTab] = useState('Delivery')
   const [restaurantData, setRestaurantData] = useState(localRestaurants)
@@ -48,7 +48,7 @@ export default function Home() {
       </View>
       <ScrollView showVerticalScrowIndicator={false}>
         <Categories/>
-        <RestaurantItems restaurantData={restaurantData}/>
+        <RestaurantItems restaurantData={restaurantData} navigation={navigation}/>
       </ScrollView>
       <Divider width={1} />
       <BottomTabs/>
