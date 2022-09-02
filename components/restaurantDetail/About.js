@@ -10,15 +10,13 @@ const yelpRestaurantInfo = {
     categories: [{title: "Thai"}, {title: "Comfort Food"}]
 }
 
-const {name, image, price, reviews, rating, categories} = yelpRestaurantInfo;
+export default function About(props) {
+    const {name, image, price, reviews, rating, categories} = props.route.params;
 
-const formattedCategories = categories.map((data) => data.title).join(" . ");
+    const formattedCategories = categories.map((data) => data.title).join(" . ");
+    const description = `${formattedCategories} ${price ? " . " + price : ""} .  💳 . ${rating} ⭐ (${reviews}+)`
 
-const description = `${formattedCategories} ${price ? " . " + price : ""} .  💳 . ${rating} ⭐ (${reviews}+)`
-
-
-export default function About() {
-  return (
+    return (
     <View>
       <RestaurantImage image={image} />
       <RestaurantName name={name}/>
